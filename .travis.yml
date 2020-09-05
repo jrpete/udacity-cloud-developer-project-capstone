@@ -26,5 +26,5 @@ jobs:
       if: type = push AND branch = master
       env:
         - SERVICE_PATH="backend"
-        - STAGE_NAME=dev
+        - STAGE_NAME='dev'
         - *MASTER_ENV
