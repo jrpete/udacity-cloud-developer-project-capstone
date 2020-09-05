@@ -17,13 +17,13 @@ script:
     - serverless deploy -s ${STAGE_NAME}
     - cd -
 environments:
-- &DEVELOPMENT_ENV
+- &MASTER_ENV
     - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
     - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
 jobs:
   include:
     # develop branch deploys to the 'dev' stage
-    - <<: *MASTER_SERVICE_JOB
+    - <<: *DEPLOY_SERVICE_JOB
       name: "Deploy Users API"
       if: type = push AND branch = master
       env:
