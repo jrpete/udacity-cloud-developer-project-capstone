@@ -11,7 +11,6 @@ install:
     - travis_retry npm install
     - cd ${SERVICE_PATH}
     - travis_retry npm install
-    - cd -
 script:
     - cd ${SERVICE_PATH}
     - serverless deploy -s ${STAGE_NAME}
