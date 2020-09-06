@@ -1,11 +1,13 @@
 service:
-  name: serverless-todo-app
+  name: serverless-todo-app-2
 
 plugins:
   - serverless-webpack
   - serverless-iam-roles-per-function
   - serverless-reqvalidator-plugin
-  
+
+
+
 provider:
   tracing:
     lambda: true
@@ -15,6 +17,7 @@ provider:
   runtime: nodejs12.x
 
   stage: ${opt:stage, 'dev'}
+  #stage: ${opt:stage, self:provider.stage}
   region: us-east-2
 
   environment:
