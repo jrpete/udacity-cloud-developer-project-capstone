@@ -25,6 +25,6 @@ jobs:
       name: "Deploy Users API"
       if: type = push AND branch = master
       env:
-        - SERVICE_PATH="backend/"
+        - SERVICE_PATH="backend"
         - STAGE_NAME=dev
         - *MASTER_ENV
