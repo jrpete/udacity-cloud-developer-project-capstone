@@ -78,7 +78,7 @@ export class TodoItemAccess{
         const s3Bucket = process.env.ATTACHMENTS_S3_BUCKET
         const urlExpiry = 300   
 
-        const s3 = new AWS.S3({
+        const s3 = new XAWS.S3({
             signatureVersion: "v4"
         });
 
