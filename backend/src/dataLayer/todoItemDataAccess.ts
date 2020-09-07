@@ -1,18 +1,18 @@
 import * as AWS  from 'aws-sdk'
-// import * as AWSXRay from 'aws-xray-sdk'
+import * as AWSXRay from 'aws-xray-sdk'
 
 // import { DocumentClient } from 'aws-sdk/clients/dynamodb'
 import { TodoItem } from '../models/TodoItem'
 import { TodoUpdate } from '../models/TodoUpdate'
 // const AWSXRay = require('aws-xray-sdk')
-// const XAWS = AWSXRay.captureAWS(AWS)
+const XAWS = AWSXRay.captureAWS(AWS)
 AWS.config.update({region: process.env.region});
 
 export class TodoItemAccess{
 
     constructor (
   
-        private readonly docClient = new AWS.DynamoDB.DocumentClient({apiVersion: '2012-08-10'}),
+        private readonly docClient = new XAWS.DynamoDB.DocumentClient({apiVersion: '2012-08-10'}),
         private readonly todoItemsTable = process.env.TODOS_TABLE){
 
         }
@@ -105,14 +105,7 @@ export class TodoItemAccess{
             imageUrl: imageUrl,
             signedUploadUrl: baseUrl
         }
-
-
     }
-
-
-                   
-        
-    
     
 }
 

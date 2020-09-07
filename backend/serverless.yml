@@ -6,8 +6,6 @@ plugins:
   - serverless-iam-roles-per-function
   - serverless-reqvalidator-plugin
 
-
-
 provider:
   tracing:
     lambda: true

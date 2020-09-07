@@ -1,0 +1,4 @@
+- name: says hello to the world by default
+  endpoint: {function: todos}
+  response:
+    body: "Hello, world"
