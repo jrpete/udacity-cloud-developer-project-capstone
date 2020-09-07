@@ -22,7 +22,7 @@ jobs:
   include:
     # develop branch deploys to the 'dev' stage
     - <<: *DEPLOY_SERVICE_JOB
-      name: "Deploy Users API"
+      name: "Deploy Backend API"
       if: type = push AND branch = master
       env:
         - SERVICE_PATH=backend

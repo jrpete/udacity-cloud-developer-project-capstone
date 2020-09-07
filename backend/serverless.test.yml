@@ -1,4 +1,7 @@
-- name: says hello to the world by default
+- name: Test each todos function
   endpoint: {function: todos}
+  request:
+    body:
+      name: TODO
   response:
-    body: "Hello, world"
+    body: "Hey there, TODO"
