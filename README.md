@@ -3,9 +3,9 @@
 
 # Functionality of the application
 
-For my Capstone project, I expanded on the previous Serverless Application by adding the following:
+For my Capstone project, I expanded on the previous Serverless Application from the 5th module by adding the following:
 
-	# Travis:
+	# Travis (.travis.yml):
 		Uses Node 12.X to trigger a build.
 		Makes sure that the serverless library is installed globally.
 		Makes sure that npm is installed in the backend directory.
@@ -38,6 +38,7 @@ The original serverless application allowed for creating/removing/updating/fetch
 The images/App_screenshots shows the succesfull deployment of the application along with screenshors of the demonstrated functionality
 working in a local client. 
 
+
 # How to run the application
 
 ## Backend
@@ -61,10 +62,13 @@ npm run start
 ```
 The images/Commands_Screenshots folder shows the succesfull completion of executing these commands
 
-##auth0
-An auth0 application was created to 
+
+## auth0
+An auth0 application was created to authenticate local users using an Auth0 domain connected to a secret. A call back URL of http://localhost:3000/callback
+was specified to allow users to be redirected to the same page after making API calls. 
 
 The images/auth0_Screenshots folder shows the succesfull creation of this application along with the corresponding client details
+
 
 ## Travis
 By deploying the application to Github with the .travis.yml file located in the root, Travis will automically build the project 
@@ -74,7 +78,10 @@ The images/Travis_Screenshots folder shows the succesfull Travis build triggered
 
 
 ## X-Ray
+AWS X-ray is used to collect trace data from the lambda functions to visualize application bottlenecks, the flow of API requests, and 
+relationship between different applicaiton components. 
 
+The images/AWS_Xray_Screenshots folder shows an X-ray Service Map and Trace after interatcting with the application locally. 
 
 
 ## Testing
